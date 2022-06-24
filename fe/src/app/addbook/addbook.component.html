@@ -34,32 +34,7 @@
               </div>
             </form>
           </div>
-          <div class="col s7">
-              <table class="responsive-table highlight">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Author</th>
-                      <th>Price</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tr *ngFor="let bk of bookService.books">
-                    <td>{{bk.Bname}}</td>
-                    <td>{{bk.Author}}</td>
-                    <td>{{bk.Price}}</td>
-                    <td>
-                        <a class="action-btn" (click)="onEdit(bk)">
-                          <i class="material-icons">edit</i>
-                        </a>
-                        <a class="action-btn" (click)="onDelete(bk._id,bookForm)">
-                          <i class="material-icons">delete</i>
-                        </a>
-                      </td>
-                  </tr>
-                </table>
-          </div>
-        </div>
+                  </div>
       </div>
     </div>
 
