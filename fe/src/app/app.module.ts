@@ -26,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LibraryBodyComponent } from './library-body/library-body.component';
 import { LoginBodyComponent } from './login-body/login-body.component';
 import { AddbookComponent } from './addbook/addbook.component';
+import { DispbooksComponent } from './dispbooks/dispbooks.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AddbookComponent } from './addbook/addbook.component';
     FooterComponent,
     LibraryBodyComponent,
     LoginBodyComponent,
-    AddbookComponent
+    AddbookComponent,
+    DispbooksComponent
   ],
   imports: [
     BrowserModule,

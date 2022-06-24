@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { LibraryBodyComponent } from './library-body/library-body.component';
 import { LoginBodyComponent } from './login-body/login-body.component';
 import { AddbookComponent } from './addbook/addbook.component';
+import { DispbooksComponent } from './dispbooks/dispbooks.component';
 export const appRoutes: Routes = [
     {
         path: 'signup', component: SignUpComponent
@@ -25,5 +26,8 @@ export const appRoutes: Routes = [
     },
     {
         path: 'addbook',component:AddbookComponent
+    },
+    {
+        path: 'books',component:DispbooksComponent
     }
 ];
