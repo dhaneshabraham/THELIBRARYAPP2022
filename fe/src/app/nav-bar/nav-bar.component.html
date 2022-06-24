@@ -1,0 +1,47 @@
+
+<section id="hero-area">
+  <img class="img-responsive" src=".\assets\images\bheader.png" alt="">
+          <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                        
+                  </button> -->
+                  
+                      <img src="./assets/images/libLOGO.png" alt="" class="logo">
+                      <img src="./assets/images/title.png" alt="" class="title">
+              </div>
+              
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                      <div class="btn-holder">
+                          <div class="btns">
+                              <!-- <button type="button" class="btn btn-outline-success glow-on-hover" >Home</button> -->
+                             <a routerLink="/"><button class="btn success glow-on-hover ">Home</button></a> 
+                          </div>
+                         
+                          <div class="btns">
+                              <a routerLink="/signup"><button class="btn success glow-on-hover">{{btn1}}</button></a>
+                          </div>
+                          <div class="btns">
+                              <a routerLink="/login"><button class="btn success glow-on-hover">{{btn2}}</button></a>
+                          </div>
+                          <span ng-hide="currentUser">
+                            <div class="btns">
+                                <a routerLink="/addbook"><button class="btn success glow-on-hover">Add Books</button></a>
+                                <button class="btn success glow-on-hover"  (click)="onLogout()" *ngIf="showLogout">Log Out</button>
+                            </div>
+                          </span>
+                          
+                      </div>
+                 
+                  </div>
+              </div>
+            </nav>    
+</section>
+
+  
+
+
+
