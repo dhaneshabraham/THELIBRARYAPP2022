@@ -2,11 +2,12 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 
-var { Book} = require('../models/book');
+const { Books} = require('../models/book');
+
 
 // => localhost:3000/books/
 router.get('/', (req, res) => {
-    Book.find((err, docs) => {
+    Books.find((err, docs) => {
         if (!err) { res.send(docs); }
         else { console.log('Error in Retriving Books :' + JSON.stringify(err, undefined, 2)); }
     });
@@ -24,13 +25,12 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log(req.body)
-    var bk = {
+    var bk = new Books({
         Bname: req.body.Bname,
         About: req.body.About,
         Price: req.body.Price,
-    };
-      
-   var book = new Book(bk);
+    });
+
    book.save();
 
 

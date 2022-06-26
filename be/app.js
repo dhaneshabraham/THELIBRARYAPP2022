@@ -10,8 +10,9 @@ const passport = require('passport');
 var booksController = require('./controllers/booksController.js');
 
 const rtsIndex = require('./routes/index.router');
-
 var app = express();
+app.use(cors({origin:'http://localhost:4200'}));
+
 
 // middleware
 app.use(bodyParser.json());
@@ -32,6 +33,12 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/book', booksController);
+
+
+
+
+
+
 
 // start server
 app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));
