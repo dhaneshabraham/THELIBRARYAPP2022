@@ -1,61 +1,38 @@
-// built-in
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import{ HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
-import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
-// components
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { SignUpComponent } from './user/sign-up/sign-up.component';
-//routes
-import { appRoutes } from './routes';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { SignInComponent } from './user/sign-in/sign-in.component';
-import { UserService } from './shared/user.service';
-// fontawesome
-// import { FontAwesomeModule, FaIconLibrary  } from '@fortawesome/angular-fontawesome';
-
-import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons';
-//other
-import { AuthGuard } from './auth/auth.guard';
-import { AuthInterceptor } from './auth/auth.interceptor';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HeaderComponent } from './header/header.component';
+import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
-import { LibraryBodyComponent } from './library-body/library-body.component';
-import { LoginBodyComponent } from './login-body/login-body.component';
-import { AddbookComponent } from './addbook/addbook.component';
-import { DispbooksComponent } from './dispbooks/dispbooks.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { BooklistComponent } from './booklist/booklist.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    SignUpComponent,
-    UserProfileComponent,
-    SignInComponent,
-    NavBarComponent,
+    HeaderComponent,
+    BodyComponent,
     FooterComponent,
-    LibraryBodyComponent,
-    LoginBodyComponent,
-    AddbookComponent,
-    DispbooksComponent
+    AddBookComponent,
+    BooklistComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    RouterModule,
-    RouterModule.forRoot(appRoutes),
-    HttpClientModule
-
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+    // FontAwesomeModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptor,
-    multi: true
-  },AuthGuard,UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
-export class book {
-    _id: string;
-    Bname: string;
-    Author: string;
-    Price: number;
+export class Book {
+    _id!: string;
+    bname: string| undefined;
+    author: string| undefined;
+    about: string| undefined;
+    price: number| undefined;
 }
+
