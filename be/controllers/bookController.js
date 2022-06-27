@@ -5,14 +5,14 @@ var ObjectId = require('mongoose').Types.ObjectId;
 var { Book } = require('../models/book');
 
 // => localhost:3000/books/
-router.get('/api/', (req, res) => {
+router.get('/', (req, res) => {
     Book.find((err, docs) => {
         if (!err) { res.send(docs); }
         else { console.log('Error in Retriving Employees :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
-router.get('/api/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
@@ -22,7 +22,7 @@ router.get('/api/:id', (req, res) => {
     });
 });
 
-router.post('/api/', (req, res) => {
+router.post('/', (req, res) => {
     var bk = new Book({
         bname: req.body.bname,
         author: req.body.author,
@@ -36,7 +36,7 @@ router.post('/api/', (req, res) => {
     });
 });
 
-router.put('/api/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
@@ -53,7 +53,7 @@ router.put('/api/:id', (req, res) => {
     });
 });
 
-router.delete('/api/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
