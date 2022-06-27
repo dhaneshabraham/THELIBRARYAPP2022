@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 
-var book = mongoose.model('book', {
-    Bname: { type: String },
-    Author: { type: String },
-    Price: { type: Number }
+var Book = mongoose.model('Book', {
+    bname: { type: String },
+    author: { type: String },
+    about: { type: String },
+    price: { type: Number }
 });
 
-module.exports = { book };
+module.exports = { Book };
