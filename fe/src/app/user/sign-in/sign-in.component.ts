@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
       this.router.navigateByUrl('/loginbody');
     }
     else{
-      alert('username : abc@gmail.com  #   password : 1234 ')
+      alert('Default username : abc@gmail.com  #   password : 1234 ')
     }
   //   this.userService.login(form.value).subscribe(
   //     res => {
