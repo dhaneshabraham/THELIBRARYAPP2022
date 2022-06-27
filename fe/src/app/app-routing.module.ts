@@ -11,7 +11,8 @@ import { LoginbodyComponent } from './loginbody/loginbody.component';
 
 const routes: Routes = [
   {
-    path: '',component:UserComponent,
+    path: '',component:UserComponent
+    ,
     children:[{path: '',component:SignUpComponent}]
   },
   {
