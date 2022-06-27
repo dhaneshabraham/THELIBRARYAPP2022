@@ -13,14 +13,13 @@ const routes: Routes = [
   {
     path: '',component:UserComponent,
     children:[{path: '',component:SignUpComponent}]
-  }
-  ,
+  },
   {
-    path: 'addbook',component:AddBookComponent
-  }
-  ,
-  {
-    path: 'books',component:BooklistComponent
+    path:'loginbody',component:LoginbodyComponent,
+    children:[{path: '',component:BodyComponent},
+    {path: 'books',component:BooklistComponent},
+    {path: 'addbook',component:AddBookComponent
+    }]
   },
   {
     path: 'login',component:SignInComponent
@@ -31,12 +30,7 @@ const routes: Routes = [
   {
     path: 'logout',component:SignUpComponent
   },
-  {
-    path:'loginbody',component:LoginbodyComponent,
-    children:[{path: '',component:BodyComponent},
-              {path: 'addbook',component:AddBookComponent}]
-  }
-
+ 
 ];
 
 @NgModule({
