@@ -10,8 +10,11 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { BooklistComponent } from './booklist/booklist.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { UserComponent } from './user/user.component';
+import { SignInComponent } from './user/sign-in/sign-in.component';
+import { LoginbodyComponent } from './loginbody/loginbody.component';
 
 
 @NgModule({
@@ -22,8 +25,10 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     AddBookComponent,
     BooklistComponent,
-    LoginComponent,
-    SignupComponent
+    SignUpComponent,
+    UserComponent,
+    SignInComponent,
+    LoginbodyComponent
   ],
   imports: [
     BrowserModule,
