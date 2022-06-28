@@ -8,8 +8,8 @@ import { Book } from './book.model';
 export class BookService {
   selectedBook!: Book;
   books:Book[] | undefined;
-  readonly baseURL = 'http://localhost:3000/books';
-  // baseURL='api';
+  // readonly baseURL = 'http://localhost:3000/books';
+  baseURL='api';
   constructor(private http:HttpClient) { }
   postBook(bk: Book) {
     console.log(bk);

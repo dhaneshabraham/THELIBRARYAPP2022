@@ -12,21 +12,21 @@ export class UserService {
     password:''
     }
     noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
-
+    baseURL='api';
     constructor(private http: HttpClient) { }
   
     //HttpMethods
   
     postUser(user: User){
-      return this.http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+      return this.http.post(this.baseURL+'/register',user,this.noAuthHeader);
     }
   
     login(authCredentials:any) {
-      return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+      return this.http.post(this.baseURL + '/authenticate', authCredentials,this.noAuthHeader);
     }
   
     getUserProfile() {
-      return this.http.get(environment.apiBaseUrl + '/userProfile');
+      return this.http.get(this.baseURL + '/userProfile');
     }
   
   
