@@ -8,7 +8,7 @@ var { Book } = require('../models/book');
 router.get('/', (req, res) => {
     Book.find((err, docs) => {
         if (!err) { res.send(docs); }
-        else { console.log('Error in Retriving Employees :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Retriving Books :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 
     Book.findById(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
-        else { console.log('Error in Retriving Employee :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Retriving Books :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     console.log(JSON.stringify(bk))
     bk.save((err, doc) => {
         if (!err) { res.send(doc); }
-        else { console.log('Error in Employee Save :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Book Save :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -49,7 +49,7 @@ router.put('/:id', (req, res) => {
     };
     Book.findByIdAndUpdate(req.params.id, { $set: bk }, { new: true }, (err, doc) => {
         if (!err) { res.send(doc); }
-        else { console.log('Error in Employee Update :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Book Update :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 
@@ -59,7 +59,7 @@ router.delete('/:id', (req, res) => {
 
     Book.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) { res.send(doc); }
-        else { console.log('Error in Employee Delete :' + JSON.stringify(err, undefined, 2)); }
+        else { console.log('Error in Book Delete :' + JSON.stringify(err, undefined, 2)); }
     });
 });
 

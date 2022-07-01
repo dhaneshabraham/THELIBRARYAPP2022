@@ -3,16 +3,19 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 var app = express();
+
+const Book=require('./models/book')
+
+
 app.use(express.static('./dist/LibraryApp'));
 
 const { mongoose } = require('./db.js');
 var bookController = require('./controllers/bookController.js');
 
 app.use(bodyParser.json());
-app.use(cors({ origin: 'http://localhost:4200' }));
-
+// app.use(cors({ origin: 'http://localhost:4200' }));
+// app.use(cors({ origin: 'mongodb://localhost:27017/LibraryApp' }));
 app.listen(3000, () => console.log('Server started at port : 3000'));
-
 
 app.use('/api/books', bookController);
 

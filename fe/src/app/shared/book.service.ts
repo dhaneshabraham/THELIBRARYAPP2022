@@ -20,8 +20,8 @@ export class BookService {
     return this.http.get(this.baseURL);
   }
 
-  putBook(emp: Book) {
-    return this.http.put(this.baseURL + `/${emp._id}`, emp);
+  putBook(bk: Book) {
+    return this.http.put(this.baseURL + `/${bk._id}`, bk);
   }
 
   deleteBook(_id: string) {
